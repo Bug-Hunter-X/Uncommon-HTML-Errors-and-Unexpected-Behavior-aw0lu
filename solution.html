@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Corrected HTML</title>
+</head>
+<body>
+  <p>This is a paragraph.</p>
+  <div id="myDiv">
+    <p>This is another paragraph inside a div.</p>
+  </div>
+
+  <script>
+    // Accessing attributes safely
+    let element = document.getElementById('myDiv');
+    let attributeValue = element.getAttribute('id'); // Safe attribute access
+    console.log(attributeValue); // Outputs "myDiv"
+
+    // Correctly using innerHTML with strings
+    document.getElementById('myDiv').innerHTML = "<h1>This is a heading</h1>";
+
+    //Handling null or undefined objects
+    let element2 = document.getElementById('nonExistentElement');
+    if (element2) {
+        element2.innerHTML = "<p>This will not throw an error</p>";
+    } else {
+        console.error('Element not found');
+    }
+  </script>
+</body>
+</html>
