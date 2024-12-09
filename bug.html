@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Error</title>
+</head>
+<body>
+  <p>This is a paragraph.</p>
+  <div id="myDiv">
+    <p>This is another paragraph inside a div.</p>
+  </div>
+
+  <script>
+    // Attempting to access a non-existent attribute
+    let invalidAttribute = document.getElementById('myDiv').nonExistentAttribute;
+    console.log(invalidAttribute); // Outputs undefined
+
+    // Incorrect use of innerHTML with unexpected values 
+    document.getElementById('myDiv').innerHTML = 123; //This works but it's unexpected.
+    document.getElementById('myDiv').innerHTML = {name: 'value'}; //This will throw an error
+
+    //Attempting to use a method on a null or undefined object
+    let element = document.getElementById('nonExistentElement');
+    element.innerHTML = "<p>This will throw an error</p>";
+  </script>
+</body>
+</html>
